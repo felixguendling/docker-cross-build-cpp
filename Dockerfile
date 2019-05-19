@@ -6,6 +6,7 @@ RUN apt update \
     && apt install -y --no-install-recommends \
         cmake \
         g++-powerpc-linux-gnu \
+        make \
     && rm -rf /var/cache/apk/*
 
 WORKDIR /root
