@@ -9,7 +9,13 @@ RUN apt update \
         make \
         qemu-user-static \
         binfmt-support \
-        debootstrap \
     && rm -rf /var/cache/apk/*
 
+ENV CC=/usr/bin/powerpc-linux-gnu-gcc
+ENV CXX=/usr/bin/powerpc-linux-gnu-g++
+ENV AR=/usr/bin/powerpc-linux-gnu-ar
+ENV LD=/usr/bin/powerpc-linux-gnu-ld
+
 WORKDIR /root
+
+CMD /bin/bash
