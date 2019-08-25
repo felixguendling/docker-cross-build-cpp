@@ -9,7 +9,9 @@ RUN apt update \
         g++-powerpc-linux-gnu \
         ninja-build \
         qemu-user-static \
-    && rm -rf /var/cache/apk/*
+    && rm -rf /var/cache/apk/* \
+    && echo 'cmake -GNinja -DCMAKE_TOOLCHAIN_FILE=/toolchain-ppc.cmake "$@"' > /bin/cmake-ppc \
+    && chmod +x /bin/cmake-ppc
 
 COPY toolchain-ppc.cmake /toolchain-ppc.cmake
 
