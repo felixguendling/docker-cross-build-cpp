@@ -6,7 +6,6 @@ RUN apt update \
     && apt upgrade -y \
     && apt install -y --no-install-recommends \
         cmake \
-        binfmt-support \
         g++-powerpc-linux-gnu \
         ninja-build \
         qemu-user-static \
